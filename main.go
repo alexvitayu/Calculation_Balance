@@ -20,6 +20,8 @@ func main() {
 	fmt.Println(transactions)
 	//fmt.Printf("Ваш баланс составляет: %.1f рублей", summ)
 	fmt.Println(summ)
+	welcome := greeting()
+	fmt.Println(welcome)
 
 }
 func inputData() float64 {
@@ -34,4 +36,11 @@ func calculateBalance(transactions []float64) float64 {
 		balance = balance + value
 	}
 	return balance
+}
+
+func greeting() string {
+	var greeting string
+	greeting = "Welcome to Belarus"
+	//fmt.Println("Welcome to Belarus")
+	return greeting
 }
