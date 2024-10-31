@@ -8,30 +8,32 @@ import "fmt"
 // Вывести сумму баланса в консоль
 
 func main() {
-	transactions := []float64{}
-	for {
-		transaction := inputData()
-		if transaction == 0 {
-			break
-		}
-		transactions = append(transactions, transaction)
-	}
-	summ := calculateBalance(transactions)
-	fmt.Println(transactions)
-	//fmt.Printf("Ваш баланс составляет: %.1f рублей", summ)
-	fmt.Println(summ)
+transactions := []float64{}
+var data float64
+for {
+data = inputTransactions()
+if data == 0 {
+	break
+}
+transactions = append(transactions, data)
+}	
+total := totalTransactions(transactions)
+fmt.Println(transactions)
+fmt.Printf("Сумма ваших транзакций составляет: %.2f", total)
+}
 
-}
-func inputData() float64 {
+func inputTransactions ()  float64 {
 	var data float64
-	fmt.Println("Введите транзакцию или нажмите n для выхода:")
-	fmt.Scan(&data)
-	return data
+fmt.Println("Введите новую транзакцию:")
+fmt.Scan(&data)
+return data
 }
-func calculateBalance(transactions []float64) float64 {
-	balance := 0.0
-	for _, value := range transactions {
-		balance = balance + value
+
+func totalTransactions (transactions []float64) float64 {
+	data := 0.0
+	for _,value := range transactions {
+		data += value
 	}
-	return balance
+	return data
+
 }
