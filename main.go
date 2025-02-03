@@ -24,7 +24,7 @@ func main() {
 }
 func inputData() float64 {
 	var data float64
-	fmt.Println("Введите транзакцию или нажмите n для выхода:")
+	fmt.Print("Введите транзакцию или нажмите n для выхода: ")
 	fmt.Scan(&data)
 	return data
 }
